@@ -29,7 +29,7 @@ class Solution:
 
 
 #second appraoch
-        class Solution:
+class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         d = defaultdict(list)
 
