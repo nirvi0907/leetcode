@@ -1,0 +1,15 @@
+class Solution:
+    def isZeroArray(self, nums: List[int], queries: List[List[int]]) -> bool:
+        # we put start and end pts i.e +1 and -1, meaning starting from l we will decremnet and in the end (r+1) it will do anything 
+        #usin gprefix sum i.e cur will keep counting num of decrements needed for idx, if less than required return false
+        count_dec = defaultdict(int)
+        for query in queries:        
+            count_dec[query[0]]+=1
+            if query[1]+1<len(nums):
+                count_dec[query[1]+1]-=1
+        cur = 0
+        for idx in range(len(nums)):
+            cur += count_dec[idx]
+            if nums[idx]>cur:
+                return False
+        return True
