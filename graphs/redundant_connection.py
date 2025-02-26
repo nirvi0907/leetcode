@@ -1,9 +1,6 @@
 class Solution:
     def findRedundantConnection(self, edges: List[List[int]]) -> List[int]:
-        '''
-        1,3-1
-        1,2
-        '''
+#
         rank = [0 for node in range(len(edges))]
         parent = [node for node in range(len(edges))]
 
